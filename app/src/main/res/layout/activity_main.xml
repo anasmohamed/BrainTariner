@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.android.braintrainer.MainActivity">
+
+
+    <Button
+        android:id="@+id/goBtn"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="start"
+        android:text="Go!"
+        android:textSize="100sp" />
+
+    <TextView
+        android:id="@+id/second"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="20s"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/questions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="40sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@+id/second"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/holo_red_light"
+        android:text="0/0"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/goBtn"
+        android:layout_centerHorizontal="true"
+        android:text="Wrong"
+        android:textSize="50sp"
+        android:visibility="invisible" />
+
+    <GridLayout
+        android:id="@+id/board"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
+        android:visibility="invisible">
+
+        <Button
+            android:id="@+id/answer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:onClick="correctAnswer"
+            android:tag="0"
+            android:textSize="40sp"
+            android:background="@android:color/holo_purple" />
+
+        <Button
+            android:id="@+id/answer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:tag="1"
+            android:onClick="correctAnswer"
+            android:layout_rowWeight="1"
+            android:textSize="40sp"
+            android:background="@android:color/holo_red_dark" />
+
+        <Button
+            android:id="@+id/answer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:tag="2"
+            android:layout_rowWeight="1"
+            android:onClick="correctAnswer"
+            android:textSize="40sp"
+            android:background="@android:color/holo_orange_light" />
+
+        <Button
+            android:id="@+id/answer4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:tag="3"
+            android:textSize="40sp"
+            android:onClick="correctAnswer"
+            android:background="@android:color/holo_green_dark" />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/play_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/result"
+        android:layout_centerHorizontal="true"
+        android:text="Play Again"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        android:onClick="playAgain"/>
+</RelativeLayout>
